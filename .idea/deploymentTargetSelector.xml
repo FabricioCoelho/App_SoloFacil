@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="deploymentTargetSelector">
+    <selectionStates>
+      <SelectionState runConfigName="app">
+        <option name="selectionMode" value="DROPDOWN" />
+        <DropdownSelection timestamp="2025-10-22T14:40:46.541544200Z">
+          <Target type="BOOT_WITH_SNAPSHOT">
+            <handle>
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\fabri\.android\avd\Pixel_4.avd" />
+            </handle>
+            <Snapshot name="snap_2025-07-13_18-30-15" path="C:\Users\fabri\.android\avd\Pixel_4.avd\snapshots\snap_2025-07-13_18-30-15" />
+          </Target>
+        </DropdownSelection>
+        <DialogSelection />
+      </SelectionState>
+    </selectionStates>
+  </component>
+</project>
