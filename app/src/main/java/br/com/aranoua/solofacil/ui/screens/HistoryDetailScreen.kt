@@ -125,13 +125,3 @@ private fun RecommendationsSection(recommendations: List<Recommendation>?) {
         }
     }
 }
-
-@Preview(showBackground = true)
-@Composable
-fun HistoryDetailScreenPreview() {
-    SoloFacilTheme {
-        val navController = rememberNavController()
-        val viewModel = HistoryDetailViewModel(SavedStateHandle())
-        HistoryDetailScreen(viewModel, navController)
-    }
-}
