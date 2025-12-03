@@ -20,7 +20,6 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navigation
-import br.com.aranoua.solofacil.ui.navigation.BottomBarScreen
 import br.com.aranoua.solofacil.ui.navigation.Routes
 import br.com.aranoua.solofacil.ui.navigation.bottomBarItems
 import br.com.aranoua.solofacil.ui.screens.*
@@ -138,13 +137,10 @@ fun AppNavHost(
                 )
             }
         }
-        
-        composable(route = "${Routes.HISTORY_DETAIL}/{analysisId}") { backStackEntry ->
-            val analysisId = backStackEntry.arguments?.getString("analysisId")?.toIntOrNull()
-            if (analysisId != null) {
-                 val viewModel: HistoryDetailViewModel = viewModel()
-                HistoryDetailScreen(viewModel, navController)
-            }
+
+        composable(route = "${Routes.HISTORY_DETAIL}/{analysisId}") {
+            val viewModel: HistoryDetailViewModel = viewModel()
+            HistoryDetailScreen(viewModel, navController)
         }
     }
 }
