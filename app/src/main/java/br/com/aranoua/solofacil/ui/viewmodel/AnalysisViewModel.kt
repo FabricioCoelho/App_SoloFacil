@@ -1,8 +1,10 @@
 package br.com.aranoua.solofacil.ui.viewmodel
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import br.com.aranoua.solofacil.data.MockRepository
+import br.com.aranoua.solofacil.SoloFacilApplication
 import br.com.aranoua.solofacil.data.model.AnalysisResult
 import br.com.aranoua.solofacil.data.model.Culture
 import br.com.aranoua.solofacil.data.model.Recommendation
@@ -27,13 +29,14 @@ data class AnalysisUiState(
     val recommendations: List<Recommendation>? = null
 )
 
-class AnalysisViewModel : ViewModel() {
+class AnalysisViewModel(application: Application) : AndroidViewModel(application) {
 
-    private val repository = MockRepository
+    // Pega o repositório real
+    private val repository = (application as SoloFacilApplication).repository
 
     private val _uiState = MutableStateFlow(AnalysisUiState())
     val uiState: StateFlow<AnalysisUiState> = _uiState.asStateFlow()
-    
+
     private val _navigationEvents = MutableSharedFlow<String>()
     val navigationEvents = _navigationEvents.asSharedFlow()
 
@@ -81,7 +84,7 @@ class AnalysisViewModel : ViewModel() {
             _uiState.update { it.copy(recommendations = recommendations) }
         }
     }
-    
+
     fun onSaveReport() {
         viewModelScope.launch {
             _uiState.value.analysisResult?.let {
