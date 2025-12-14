@@ -10,6 +10,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavBackStackEntry
@@ -48,7 +49,11 @@ fun MainScreen() {
             val currentRoute = navBackStackEntry?.destination?.route
             
             if (bottomBarItems.any { it.route == currentRoute }) {
-                NavigationBar {
+                NavigationBar (
+                    containerColor = MaterialTheme.colorScheme.primary,
+                    contentColor = Color.White
+                ) {
+
                     bottomBarItems.forEach { screen ->
                         NavigationBarItem(
                             icon = { Icon(screen.icon, contentDescription = screen.label) },
@@ -62,7 +67,14 @@ fun MainScreen() {
                                     launchSingleTop = true
                                     restoreState = true
                                 }
-                            }
+                            },
+                            colors = NavigationBarItemDefaults.colors(
+                                indicatorColor = Color.White,
+                                selectedIconColor = MaterialTheme.colorScheme.primary,
+                                selectedTextColor = Color.White,
+                                unselectedIconColor = Color.White.copy(alpha = 0.7f),
+                                unselectedTextColor = Color.White.copy(alpha = 0.7f)
+                            )
                         )
                     }
                 }

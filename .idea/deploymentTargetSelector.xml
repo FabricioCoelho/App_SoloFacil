@@ -4,12 +4,11 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2025-10-22T14:40:46.541544200Z">
-          <Target type="BOOT_WITH_SNAPSHOT">
+        <DropdownSelection timestamp="2025-12-13T21:33:34.444189158Z">
+          <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\fabri\.android\avd\Pixel_4.avd" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=/home/fabricio/.android/avd/Pixel_4.avd" />
             </handle>
-            <Snapshot name="snap_2025-07-13_18-30-15" path="C:\Users\fabri\.android\avd\Pixel_4.avd\snapshots\snap_2025-07-13_18-30-15" />
           </Target>
         </DropdownSelection>
         <DialogSelection />
